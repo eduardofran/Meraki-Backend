@@ -87,3 +87,74 @@ Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar via
 | createdAt| Date     | -         | false    | Date.Now                    |
 | stars    | Numbers  | -         | false    | -                           |
 
+### API ROUTES
+
+Please note that all routes in this API should be called with the `/api` prefix before the endpoint:
+
+```
+POST http://DOMAIN/api/auth/signup
+```
+
+### AUTHENTICATION ENDPOINTS
+> TOKEN Required: NO
+
+| METHOD | URL           | What does it do      |
+| ------ | ------------- | -------------------- |
+| POST   | `auth/signup` | Create a new account |
+| POST   | `auth/login`  | Authenticates a user |
+
+### EVENT ENDPOINTS
+> TOKEN Required: NO
+
+| METHOD | URL                        | What does it do          |
+| ------ | ---------------------------| ------------------------ |
+| GET    | `/events`                  | Get All Events           |
+| GET    | `/events/:id`              | Get One Event            |
+| GET    | `/events?filter`           | Get  Event filtered      |
+
+> TOKEN Required: YES
+
+| METHOD | URL                          | What does it do          |
+| ------ | -----------------------------| ------------------------ |
+| GET    | `/events`                    | Get All Events           |
+| GET    | `/events/:id`                | Get One Event            |
+| GET    | `/events?filter`             | Get  Event filtered      |
+| GET    | `/events/:id/reviews`        | Get  reviews  Event      |
+| POST   | `/events/:id/reviews`        | Create new reviews       |
+| Delete |`/events/eventId/reviews/:id` | Delete reviews           |????
+
+
+### ME ENDPOINTS
+
+> TOKEN Required: YES
+
+| METHOD | URL                        | What does it do          |
+| ------ | ---------------------------| ------------------------ |
+| GET    | `/me/events/:id`           | Get One Event            |
+| POST   | `/me/events`               | Create One event         |
+| PUT    | `/me/events/:id`           | Update event             |
+| DELETE | `/me/events/:id`           | Delete event             |
+| GET    | `/me/favorites`            | Get all favorites events |
+| POST   | `/me/favorites/:id`        | add favorites event      |
+| DELETE | `/me/favorites/:id`        | Delete favorite event    |
+| GET    | `/me`                      | Get information user     |
+| PUT    | `/me`                      | Put update user info     |
+| POST   | `/me`                      | add user information     |
+| DELETE | `/me`                      | DELETE user information  |
+| GET    | `/me`                      | Get information user     |
+
+
+
+
+
+
+
+<!-- ### TODOs COMMENTS
+> TOKEN Required: YES
+
+| METHOD | URL                             | What does it do             |
+| ------ | ------------------------------- | --------------------------- |
+| GET    | `me/events/:todoId/comments`     | Get All Comments in a Todo  |
+| POST   | `me/events/:todoId/comments`     | Create a Comment in a Todo  |
+| PUT    | `me/events/:todoId/comments/:id` | Update a Comment in a Todo  |
+| DELETE | `me/events/:todoId/comments/:id` | Deletes a Comment in a Todo | -->
