@@ -5,25 +5,25 @@
 
 Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar viajes, aventuras experiencias a la vez que ayudas a las personas, esas mismas personas te daran comida y alojamiento .
 
-## User Stories 
-### Sin Token 
- 
-* El usuario puede acceder al home 
-* El usuario puede filtrar 
-* El usuario puede ver eventos especificos 
-* El usuario puede ver perfiles de usuarios 
-* El usuario puede ver una lista de eventos 
-* El usuario puede registrarse 
+## User Stories
+### Sin Token
+
+* El usuario puede acceder al home
+* El usuario puede filtrar
+* El usuario puede ver eventos especificos
+* El usuario puede ver perfiles de usuarios
+* El usuario puede ver una lista de eventos
+* El usuario puede registrarse
 * El usuario puede iniciar sesion
 
 ### Con Token
-* El usuario puede editar su cuenta 
+* El usuario puede editar su cuenta
 * El usuario puede eliminar su cuenta
-* El usuario puede añadir a favoritos los eventos 
-* El usuario puede mandar una solicitud de contacto a un creador de evento  
-* El usuario puede crear eventos 
+* El usuario puede añadir a favoritos los eventos
+* El usuario puede mandar una solicitud de contacto a un creador de evento
+* El usuario puede crear eventos
 * El usuario puede marcar como completados eventos especificos.
-* El usuario puede valorar eventos 
+* El usuario puede valorar eventos
 * El usuario puede editar eventos creados
 * El usuario puede borrar eventos creados
 * El usuario puede ver su lista de favoritos
@@ -34,7 +34,7 @@ Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar via
 ### USER MODEL
 
 | KEY       | TYPE     | REQUIRED | REFERENCE | VALIDATIONS          | DEFAULT|
-|-----------|----------|----------|-----------|----------------------|--------| 
+|-----------|----------|----------|-----------|----------------------|--------|
 | name      | String   | true     |           |                      |        |
 | email     | String   | true     |           | regex(email-unique)  |        |
 | password  | String   | true     |           | min(6)               |        |
@@ -43,7 +43,7 @@ Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar via
 | photoURL  | String   | false    |           |                      |  Url   |
 | bio       | String   | false    |           | Min: 50 max: 160     |        |
 | languages | [String] | false    |           |                      |        |
-| createdAt | Date     | false    |           |                      |Date.Now|   
+| createdAt | Date     | false    |           |                      |Date.Now|
 | skills    | [String] | false    |           |                      |        |
 | favEvents |[ObjectId]| false    |  events   |                      |        |
 
@@ -73,9 +73,9 @@ Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar via
 
 | KEY            | TYPE     | REFERENCE | REQUIRED | VALIDATIONS / DEFAULT |
 |----------------|----------|-----------|----------|-----------------------|
-| completed      | booleans | false     | false    |                       |        
-| user           | ObjectId | user      | false    |                       | 
-| event          | ObjectId | event     | false    |                       | 
+| completed      | Boolean  | false     | false    |                       |
+| user           | ObjectId | user      | false    |                       |
+| event          | ObjectId | event     | false    |                       |
 
 
 
@@ -109,7 +109,6 @@ POST http://DOMAIN/api/auth/signup
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
 | PUT    | `/me/profile`              | Put update my user inf   |
-| POST   | `/me/profile`              | Add my user information  |
 | DELETE | `/me/profile`              | Delete account           |
 | GET    | `/me/profile`              | Get my user info         |
 
@@ -119,34 +118,28 @@ POST http://DOMAIN/api/auth/signup
 
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
-| GET    | `/events`                  | Get All Events           |
+| GET    | `/events`                  | Get All Events / Get Events filtered (query params)     |
 | GET    | `/events/:id`              | Get One Event            |
-| GET    | `/events/filter`           | Get Event filtered       |
 
 > TOKEN Required: YES
 
-| METHOD | URL                        | What does it do          |
-| ------ | ---------------------------| ------------------------ |
-| GET    | `/me/events`               | Get All Users Event      |
-| GET    | `/me/events/:id`           | Get One Event            |
-| POST   | `/me/events`               | Create One event         |
-| PUT    | `/me/events/:id`           | Update event             |
-| DELETE | `/me/events/:id`           | Delete event             |
+| METHOD | URL                        | What does it do           |
+| ------ | ---------------------------| ------------------------- |
+| GET    | `/me/events`               | Get All My Events as Host |
+| POST   | `/me/events`               | Create One event          |
+| PUT    | `/me/events/:id`           | Update event              |
+| DELETE | `/me/events/:id`           | Delete event              |
 
 ### REVIEWS ENDPOINTS
 
-> TOKEN Required: NO
-
-| METHOD | URL                          | What does it do          |
-| ------ | -----------------------------| ------------------------ |
-| GET    | `/events/:id/reviews`        | Get reviews Event        |
-
 > TOKEN Required: YES
 
-| METHOD | URL                           | What does it do          |
-| ------ | ------------------------------| ------------------------ |
-| POST   | `/events/:id/reviews`         | Create new reviews       |
-| Delete | `/events/eventId/reviews/:id` | Delete reviews           |
+| METHOD | URL                                    | What does it do          |
+| ------ | -------------------------------------- | ------------------------ |
+| POST   | `me/interactions/:id/reviews`          | Create new reviews       |
+| DELETE | `me/interactions/:intId/reviews/:id`   | Delete reviews           |
+| PUT    | `me/interactions/:intId/reviews/:id`   | Modify reviews           |
+
 
 ### FAVORITES ENDPOINTS
 > TOKEN Required: YES
@@ -154,7 +147,7 @@ POST http://DOMAIN/api/auth/signup
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
 | GET    | `/me/favorites`            | Get all favorites events |
-| POST   | `/me/favorites/:id`        | Add favorites event      |
+| POST   | `/me/favorites`        | Add favorites event      |
 | DELETE | `/me/favorites/:id`        | Delete favorite event    |
 
 ### USER ENDPOINTS
@@ -163,7 +156,7 @@ POST http://DOMAIN/api/auth/signup
 
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
-| GET    | `/users/:id`               | Get One User info        |
+| GET    | `/me/users/:id`               | Get One User info        |
 
 
 ### INTERACTION ENDPOINTS
@@ -171,6 +164,6 @@ POST http://DOMAIN/api/auth/signup
 
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
-| POST   | `/me/event/:id`            | Create Interaction       |
-| PUT    | `/me/event/:id`            | Mark as completed        |
-
+| POST   | `/me/interactions`         | Create Interaction       |
+| PUT    | `/me/interactions/:id`     | Mark as completed        |
+| GET    | `/me/interactions`         | Get All interactions     |
