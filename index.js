@@ -39,4 +39,5 @@ app.listen(PORT, (err) => {
   console.info('💻  Meraki Server Live')
   console.info(`📡  PORT: http://localhost:${PORT}`)
   console.info('>'.repeat(40) + '\n')
-})
+}
+)
