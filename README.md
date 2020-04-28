@@ -52,40 +52,40 @@ Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar via
 
 | KEY            | TYPE     | REFERENCE | REQUIRED | VALIDATIONS / DEFAULT |
 |----------------|----------|-----------|----------|-----------------------|
-| title          | String   | -         | true     | -                     |
-| description    | String   | -         | true     | Max 1000              |
-| country        | String   | -         | true     | -                     |
-| city           | String   | -         | true     | -                     |
-| street         | String   | -         | true     | -                     |
-| strNum         | String   | -         | true     | -                     |
-| skillsRequired | [String] | -         | false    | -                     |
-| offers         | [String] | -         | true     | -                     |
-| workHours      | Number   | -         | true     | -                     |
-| available      | [String] | -         | true     | -                     |
-| minStay        | String   | -         | true     | -                     |
-| mainPhoto      | String   | -         | true     | -                     |
-| gallery        | [String] | -         | false    | -                     |
-| createdAt      | Date     | -         | false    | Date.Now              |
-| creator        | ObjectId | user      | true     | -                     |
+| title          | String   |           | true     |                       |
+| description    | String   |           | true     | Max 1000              |
+| country        | String   |           | true     |                       |
+| city           | String   |           | true     |                       |
+| street         | String   |           | true     |                       |
+| strNum         | String   |           | true     |                       |
+| skillsRequired | [String] |           | false    |                       |
+| offers         | [String] |           | true     |                       |
+| workHours      | Number   |           | true     |                       |
+| available      | [String] |           | true     |                       |
+| minStay        | String   |           | true     |                       |
+| mainPhoto      | String   |           | true     |                       |
+| gallery        | [String] |           | false    |                       |
+| createdAt      | Date     |           | false    | Date.Now              |
+| creator        | ObjectId | user      | true     |                       |
 | reviews        |[ObjectId]| reviews   | true     |                       |
 
 ### INTERACTION USERS
 
 | KEY            | TYPE     | REFERENCE | REQUIRED | VALIDATIONS / DEFAULT |
 |----------------|----------|-----------|----------|-----------------------|
-| completed      | booleans | false     | false    | -                     |        
-| user           | ObjectId | user      | false    | -                     | 
-| event          | ObjectId | event     | false    | -                     | 
+| completed      | booleans | false     | false    |                       |        
+| user           | ObjectId | user      | false    |                       | 
+| event          | ObjectId | event     | false    |                       | 
 
 
 
 ### REVIEWS MODEL
 | KEY      | TYPE     | REFERENCE | REQUIRED | VALIDATIONS / DEFAULT       |
 | -------- | -------- | --------- | -------- | ----------------------------|
-| comment  | String   | -         | true     | -                           |
+| comment  | String   |           | true     |                             |
 | user     | ObjectId | user      | true     | current_user                |
-| createdAt| Date     | -         | false    | Date.Now                    |
-| stars    | Numbers  | -         | false    | -                           |
+| createdAt| Date     |           | false    | Date.Now                    |
+| stars    | Numbers  |           | false    |                             |
 
 ### API ROUTES
 
@@ -124,7 +124,8 @@ POST http://DOMAIN/api/auth/signup
 | GET    | `/events/filter`           | Get Event filtered       |
 
 > TOKEN Required: YES
-
+| METHOD | URL                        | What does it do          |
+| ------ | ---------------------------| ------------------------ |
 | GET    | `/me/events`               | Get All Users Event      |
 | GET    | `/me/events/:id`           | Get One Event            |
 | POST   | `/me/events`               | Create One event         |
