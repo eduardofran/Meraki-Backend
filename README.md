@@ -124,6 +124,7 @@ POST http://DOMAIN/api/auth/signup
 | GET    | `/events/filter`           | Get Event filtered       |
 
 > TOKEN Required: YES
+
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
 | GET    | `/me/events`               | Get All Users Event      |
@@ -166,6 +167,7 @@ POST http://DOMAIN/api/auth/signup
 
 
 ### INTERACTION ENDPOINTS
+> TOKEN Required: YES
 
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
