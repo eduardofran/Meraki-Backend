@@ -103,58 +103,71 @@ POST http://DOMAIN/api/auth/signup
 | POST   | `auth/signup` | Create a new account |
 | POST   | `auth/login`  | Authenticates a user |
 
-### EVENT ENDPOINTS
+### PROFILE ENDPOINTS
+> TOKEN Required: YES
+
+| METHOD | URL                        | What does it do          |
+| ------ | ---------------------------| ------------------------ |
+| PUT    | `/me/profile`              | Put update my user inf   |
+| POST   | `/me/profile`              | Add my user information  |
+| DELETE | `/me/profile`              | Delete account           |
+| GET    | `/me/profile`              | Get my user info         |
+
+### EVENTS ENDPOINTS
+
 > TOKEN Required: NO
 
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
 | GET    | `/events`                  | Get All Events           |
 | GET    | `/events/:id`              | Get One Event            |
-| GET    | `/events?filter`           | Get  Event filtered      |
+| GET    | `/events/filter`           | Get Event filtered       |
 
 > TOKEN Required: YES
 
+| GET    | `/me/events`               | Get All Users Event      |
+| GET    | `/me/events/:id`           | Get One Event            |
+| POST   | `/me/events`               | Create One event         |
+| PUT    | `/me/events/:id`           | Update event             |
+| DELETE | `/me/events/:id`           | Delete event             |
+
+### REVIEWS ENDPOINTS
+
+> TOKEN Required: NO
+
 | METHOD | URL                          | What does it do          |
 | ------ | -----------------------------| ------------------------ |
-| GET    | `/events`                    | Get All Events           |
-| GET    | `/events/:id`                | Get One Event            |
-| GET    | `/events?filter`             | Get  Event filtered      |
-| GET    | `/events/:id/reviews`        | Get  reviews  Event      |
-| POST   | `/events/:id/reviews`        | Create new reviews       |
-| Delete |`/events/eventId/reviews/:id` | Delete reviews           |????
+| GET    | `/events/:id/reviews`        | Get reviews Event        |
 
+> TOKEN Required: YES
 
-### ME ENDPOINTS
+| METHOD | URL                           | What does it do          |
+| ------ | ------------------------------| ------------------------ |
+| POST   | `/events/:id/reviews`         | Create new reviews       |
+| Delete | `/events/eventId/reviews/:id` | Delete reviews           |
+
+### FAVORITES ENDPOINTS
+> TOKEN Required: YES
+
+| METHOD | URL                        | What does it do          |
+| ------ | ---------------------------| ------------------------ |
+| GET    | `/me/favorites`            | Get all favorites events |
+| POST   | `/me/favorites/:id`        | Add favorites event      |
+| DELETE | `/me/favorites/:id`        | Delete favorite event    |
+
+### USER ENDPOINTS
 
 > TOKEN Required: YES
 
 | METHOD | URL                        | What does it do          |
 | ------ | ---------------------------| ------------------------ |
-| GET    | `/me/events/:id`           | Get One Event            |
-| POST   | `/me/events`               | Create One event         |
-| PUT    | `/me/events/:id`           | Update event             |
-| DELETE | `/me/events/:id`           | Delete event             |
-| GET    | `/me/favorites`            | Get all favorites events |
-| POST   | `/me/favorites/:id`        | add favorites event      |
-| DELETE | `/me/favorites/:id`        | Delete favorite event    |
-| GET    | `/me`                      | Get information user     |
-| PUT    | `/me`                      | Put update user info     |
-| POST   | `/me`                      | add user information     |
-| DELETE | `/me`                      | DELETE user information  |
-| GET    | `/me`                      | Get information user     |
+| GET    | `/users/:id`               | Get One User info        |
 
 
+### INTERACTION ENDPOINTS
 
+| METHOD | URL                        | What does it do          |
+| ------ | ---------------------------| ------------------------ |
+| POST   | `/me/event/:id`            | Create Interaction       |
+| PUT    | `/me/event/:id`            | Mark as completed        |
 
-
-
-
-<!-- ### TODOs COMMENTS
-> TOKEN Required: YES
-
-| METHOD | URL                             | What does it do             |
-| ------ | ------------------------------- | --------------------------- |
-| GET    | `me/events/:todoId/comments`     | Get All Comments in a Todo  |
-| POST   | `me/events/:todoId/comments`     | Create a Comment in a Todo  |
-| PUT    | `me/events/:todoId/comments/:id` | Update a Comment in a Todo  |
-| DELETE | `me/events/:todoId/comments/:id` | Deletes a Comment in a Todo | -->
