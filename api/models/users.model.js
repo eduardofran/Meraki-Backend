@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
   photoUrl: {
     type: String,
     required: false,
-    default: 'https://lh3.googleusercontent.com/proxy/qtIXpDA8V4uZKI3_NT4nWJf1dZz23mWBQ-FLWXpfXNaeJOkXB_nn9oyFE3IpqDQPF4emDlyMyNo_aZlXTILODHKn'
+    default: 'https://img1.freepng.es/20180328/vyq/kisspng-pile-of-poo-emoji-t-shirt-sticker-monkey-blushing-emoji-5abb88026f8a26.7155561615222394904569.jpg'
   },
   bio: {
     type: String,
