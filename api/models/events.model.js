@@ -61,12 +61,12 @@ const eventSchema = new mongoose.Schema({
     default: Date.now()
   },
   creator: {
-    type: mongoose.type.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'users'
   },
   reviews: [{
-    type: mongoose.type.ObjectId,
+    type: mongoose.Schema.Types.ObjectId,
     required: false,
     ref: 'reviews'
   }]

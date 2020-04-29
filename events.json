@@ -17,9 +17,8 @@
   "minStay": "3" ,
   "mainPhoto": "",
   "gallery": "",
-  "createdAt":"",
   "creator": "5ea888c260a9025d5dcef23e" ,
-  "reviews": ""
+  "reviews": []
         },
         {
    "title":"Voluntário em Camping/Sítio." ,
@@ -35,9 +34,8 @@
   "minStay": "2" ,
   "mainPhoto": "",
   "gallery": "",
-  "createdAt":"",
   "creator": "5ea99aecf36e02160adbd06b" ,
-  "reviews": ""
+  "reviews": []
         },
           {
    "title":"Alimentando animales y mejorando su calidad de vida" ,
@@ -53,9 +51,8 @@
   "minStay": "3" ,
   "mainPhoto": "",
   "gallery": "",
-  "createdAt":"",
   "creator": "5ea888c260a9025d5dcef23e" ,
-  "reviews": ""
+  "reviews": []
         }, 
          {
    "title":"Off-grid experience living near a natural park close by the sea!" ,
@@ -71,9 +68,8 @@
   "minStay": "4" ,
   "mainPhoto": "",
   "gallery": "",
-  "createdAt":"",
   "creator": "5ea99aecf36e02160adbd06b" ,
-  "reviews": ""
+  "reviews": []
         },
           {
    "title":"Reception afternoon shift+ Help us with morning chores" ,
@@ -89,9 +85,8 @@
   "minStay": "3" ,
   "mainPhoto": "",
   "gallery": "",
-  "createdAt":"",
   "creator": "5ea888c260a9025d5dcef23e" ,
-  "reviews": ""
+  "reviews": []
         },
           {
    "title":"Reception afternoon shift+ Help us with morning chores" ,
@@ -107,9 +102,8 @@
   "minStay": "3" ,
   "mainPhoto": "",
   "gallery": "",
-  "createdAt":"",
   "creator": "5ea888c260a9025d5dcef23e" ,
-  "reviews": ""
+  "reviews": []
         }
   ]
  }
