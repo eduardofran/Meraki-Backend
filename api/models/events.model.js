@@ -67,7 +67,7 @@ const eventSchema = new mongoose.Schema({
   },
   reviews: [{
     type: mongoose.type.ObjectId,
-    required: true,
+    required: false,
     ref: 'reviews'
   }]
 })
