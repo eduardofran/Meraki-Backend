@@ -67,7 +67,7 @@ Nuestro proyecto se llama MERAKI, Es una pagina web con la que puedes buscar via
 | gallery        | [String] |           | false    |                       |
 | createdAt      | Date     |           | false    | Date.Now              |
 | creator        | ObjectId | user      | true     |                       |
-| reviews        |[ObjectId]| reviews   | true     |                       |
+| reviews        |[ObjectId]| reviews   | false    |                       |
 
 ### INTERACTION USERS
 
