@@ -1,3 +1,5 @@
+const removeDiacritics = require('diacritics').remove
+
 const EventsModel = require('../models/events.model.js')
 const { handleError } = require('../utils')
 
@@ -7,6 +9,7 @@ module.exports = {
 
 function getAllEvents (req, res) {
   let filters = {}
+
   if (req.query.place) {
     filters =
     {
@@ -22,20 +25,19 @@ function getAllEvents (req, res) {
           }
         },
         {
-          countryWithoutDiacritics: {
-            $regex: `${req.query.place}`, $options: 'i'
+          countryDiacritics: {
+            $regex: `${removeDiacritics(req.query.place)}`, $options: 'i'
           }
         },
         {
-          cityWithoutDiacritics: {
-            $regex: `${req.query.place}`, $options: 'i'
+          cityDiacritics: {
+            $regex: `${removeDiacritics(req.query.place)}`, $options: 'i'
           }
         }
 
       ]
     }
   }
-console.log(filters)
   // if (req.query.country) {
   //   filters.country = { $regex: `${req.query.country}`, $options: 'i' }
   // }

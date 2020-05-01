@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-const removeDiacritics = require('diacritics').remove
 
 const eventSchema = new mongoose.Schema({
   title: {
@@ -15,9 +14,15 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Selecciona tu país']
   },
+  countryDiacritics: {
+    type: String
+  },
   city: {
     type: String,
     required: [true, 'Añade tu localidad']
+  },
+  cityDiacritics: {
+    type: String
   },
   street: {
     type: String,
@@ -72,15 +77,6 @@ const eventSchema = new mongoose.Schema({
     ref: 'reviews'
   }]
 })
-
-eventSchema.virtual('countryWithoutDiacritics')
-  .get(function () {
-    return removeDiacritics(this.country)
-  })
-eventSchema.virtual('cityWithoutDiacritics')
-  .get(function () {
-    return removeDiacritics(this.city)
-  })
 
 const eventModel = mongoose.model('event', eventSchema)
 module.exports = eventModel
