@@ -57,7 +57,7 @@ function getAllEvents (req, res) {
           return JSON.parse(`{ "skillsRequired": "${element}" }`)
         })
       }
-      console.log(skills)
+      // console.log(skills)
     } else {
       skills = {
         $or: [
@@ -84,7 +84,7 @@ function getAllEvents (req, res) {
           return JSON.parse(`{ "offers": "${element}" }`)
         })
       }
-      console.log(offers)
+      // console.log(offers)
     } else {
       offers = {
         $or: [
@@ -111,7 +111,7 @@ function getAllEvents (req, res) {
           return JSON.parse(`{ "available": "${element}" }`)
         })
       }
-      console.log(dispo)
+      // console.log(dispo)
     } else {
       dispo = {
         $or: [
@@ -130,7 +130,7 @@ function getAllEvents (req, res) {
     }
   }
 
-  console.log(filters)
+  // console.log(filters)
   EventsModel
     .find(filters)
     .then(response => res.json(response))
