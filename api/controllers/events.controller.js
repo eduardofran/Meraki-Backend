@@ -78,7 +78,7 @@ function getAllEvents (req, res) {
   // ------- FILTRO PARA OFFERS -------------->
   if (req.query.o) {
     let offers = ''
-    if (req.query.s instanceof Array) {
+    if (req.query.o instanceof Array) {
       offers = {
         $or: req.query.o.map(element => {
           return JSON.parse(`{ "offers": "${element}" }`)
@@ -105,7 +105,7 @@ function getAllEvents (req, res) {
   // ------- FILTRO PARA DISPO -------------->
   if (req.query.d) {
     let dispo = ''
-    if (req.query.s instanceof Array) {
+    if (req.query.d instanceof Array) {
       dispo = {
         $or: req.query.d.map(element => {
           return JSON.parse(`{ "available": "${element}" }`)
