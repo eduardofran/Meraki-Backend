@@ -33,11 +33,11 @@ const eventSchema = new mongoose.Schema({
     required: [true, 'Añade el numero de tu calle']
   },
   skillsRequired: [{
-    type: String,
+    type: Object,
     required: false
   }],
   offers: [{
-    type: String,
+    type: Object,
     required: [true, 'Tienes que seleccionar alguna opcion']
   }],
   workHours: {

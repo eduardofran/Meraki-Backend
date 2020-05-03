@@ -12,7 +12,7 @@
         "street": "Calle Alfonso XII",
         "strNum": "15",
         "skillsRequired": ["Fotografía", "Informática", "Bartender"],
-        "offers": ["Habitacion de equipo", "Todo Includio"],
+        "offers": [{"title":"Habitacion de equipo","icon":"mdi-account-multiple-plus"},{ "title":"Todo Incluido", "icon": "mdi-infinity"}],
         "workHours": 5,
         "available": ["Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
         "minStay": "3",

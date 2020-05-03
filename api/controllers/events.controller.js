@@ -4,7 +4,8 @@ const EventsModel = require('../models/events.model.js')
 const { handleError } = require('../utils')
 
 module.exports = {
-  getAllEvents
+  getAllEvents,
+  getEvent
 }
 
 function getAllEvents (req, res) {
@@ -54,16 +55,18 @@ function getAllEvents (req, res) {
     if (req.query.s instanceof Array) {
       skills = {
         $or: req.query.s.map(element => {
-          return JSON.parse(`{ "skillsRequired": "${element}" }`)
+          return JSON.parse(`{ "skillsRequired.title": "${element}" }`)
         })
       }
       console.log(skills)
     } else {
       skills = {
         $or: [
-          JSON.parse(`{ "skillsRequired": "${req.query.s}" }`)
+          JSON.parse(`{ "skillsRequired.title": "${req.query.s}" }`)
         ]
       }
+      console.log(skills)
+
     }
     if (filters.$and) {
       filters.$and.push(skills)
@@ -81,14 +84,14 @@ function getAllEvents (req, res) {
     if (req.query.o instanceof Array) {
       offers = {
         $or: req.query.o.map(element => {
-          return JSON.parse(`{ "offers": "${element}" }`)
+          return JSON.parse(`{ "offers.title": "${element}" }`)
         })
       }
       console.log(offers)
     } else {
       offers = {
         $or: [
-          JSON.parse(`{ "offers": "${req.query.o}" }`)
+          JSON.parse(`{ "offers.title": "${req.query.o}" }`)
         ]
       }
     }
@@ -133,6 +136,12 @@ function getAllEvents (req, res) {
   console.log(filters)
   EventsModel
     .find(filters)
+    .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+}
+function getEvent (req, res) {
+  EventsModel
+    .findById(req.params.id)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
