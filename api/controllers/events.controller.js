@@ -66,7 +66,6 @@ function getAllEvents (req, res) {
         ]
       }
       console.log(skills)
-
     }
     if (filters.$and) {
       filters.$and.push(skills)

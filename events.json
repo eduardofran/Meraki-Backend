@@ -3,16 +3,26 @@
     "model": "event",
     "documents": [
       {
-        "title": "Reception afternoon shift+ Help us with morning chores",
+        "title": "Recepción turno de tarde + Ayúdanos con las tareas de la mañana",
         "description": "Guía Turístico: Organiza y sé el guía en tours por la ciudad.",
         "country": "España",
         "countryDiacritics": "Espana",
         "city": "Sevilla",
-        "cityDiacritics":"Sevilla",
+        "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": ["Fotografía", "Informática", "Bartender"],
-        "offers": [{"title":"Habitacion de equipo","icon":"mdi-account-multiple-plus"},{ "title":"Todo Incluido", "icon": "mdi-infinity"}],
+        "skillsRequired": [
+          { "title": "Fotografía", "icon": "mdi-camera" },
+          { "title": "Informática", "icon": "mdi-gesture-tap-button" },
+          { "title": "Bartender", "icon": "mdi-glass-cocktail" }
+        ],
+        "offers": [
+          {
+            "title": "Habitación de equipo",
+            "icon": "mdi-account-multiple-plus"
+          },
+          { "title": "Todo incluido", "icon": "mdi-infinity" }
+        ],
         "workHours": 5,
         "available": ["Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
         "minStay": "3",
@@ -30,11 +40,33 @@
         "street": "Avenida Santa tecla",
         "strNum": "35",
         "skillsRequired": [
-          "Entretenimiento  deportivo",
-          "Enseñar idiomas",
-          "Cuidado de animales"
+          {
+            "title": "Entretenimiento deportivo",
+            "icon": "mdi-soccer"
+          },
+          {
+            "title": "Enseñar idiomas",
+            "icon": "mdi-google-translate"
+          },
+          {
+            "title": "Grabación",
+            "icon": "mdi-video-outline"
+          }
         ],
-        "offers": ["Camping", "Almuerzo", "Cena"],
+        "offers": [
+          {
+            "title": "Camping",
+            "icon": "mdi-image-filter-hdr"
+          },
+          {
+            "title": "Almuerzo",
+            "icon": "mdi-silverware"
+          },
+          {
+            "title": "Cena",
+            "icon": "mdi-silverware-fork-knife"
+          }
+        ],
         "workHours": 5,
         "available": [
           "Mayo",
@@ -59,11 +91,29 @@
         "street": "paseo rio Tombebabua",
         "strNum": "s/n",
         "skillsRequired": [
-          "Cuidado de animales",
-          "Mantenimiento ",
-          "Bartender"
+          {
+            "title": "Entretenimiento deportivo",
+            "icon": "mdi-soccer"
+          },
+          {
+            "title": "Cuidado de animales",
+            "icon": "mdi-dog-side"
+          },
+          {
+            "title": "Jardinería",
+            "icon": "mdi-flower-outline"
+          }
         ],
-        "offers": ["Habitacion de equipo", "Todo Includio"],
+        "offers": [
+          {
+            "title": "Habitación de equipo",
+            "icon": "mdi-account-multiple-plus"
+          },
+          {
+            "title": "Todo incluido",
+            "icon": "mdi-infinity"
+          }
+        ],
         "workHours": 5,
         "available": ["Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
         "minStay": "3",
@@ -72,7 +122,7 @@
         "reviews": []
       },
       {
-        "title": "Off-grid experience living near a natural park close by the sea!",
+        "title": "Reconstrucion en Tarragona",
         "description": "Mantenimiento: Ayuda con varias tareas de reparación o construcción.Jardinería: Ayuda a plantar y cultivar jardines.",
         "country": "España",
         "countryDiacritics": "Espana",
@@ -80,8 +130,30 @@
         "cityDiacritics": "Tarragona",
         "street": "Estació de xerta.",
         "strNum": "1",
-        "skillsRequired": ["Jardinería", "Mantenimiento"],
-        "offers": ["Habitacion de equipo", "Todo Includio"],
+        "skillsRequired": [
+          {
+            "title": "Entretenimiento musical",
+            "icon": "mdi-music-note-outline"
+          },
+          {
+            "title": "Pintura y decoración",
+            "icon": "mdi-format-paint"
+          },
+          {
+            "title": "Jardinería",
+            "icon": "mdi-flower-outline"
+          }
+        ],
+        "offers": [
+          {
+            "title": "Habitación individual",
+            "icon": "mdi-account"
+          },
+          {
+            "title": "Todo incluido",
+            "icon": "mdi-infinity"
+          }
+        ],
         "workHours": 6,
         "available": ["Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
         "minStay": "4",
@@ -90,7 +162,7 @@
         "reviews": []
       },
       {
-        "title": "Reception afternoon shift+ Help us with morning chores",
+        "title": "Se el guia perfecto",
         "description": "Guía Turístico: Organiza y sé el guía en tours por la ciudad.",
         "country": "España",
         "countryDiacritics": "Espana",
@@ -98,8 +170,30 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": ["Fotografía", "Informática", "Bartender"],
-        "offers": ["Habitacion de equipo", "Todo Includio"],
+        "skillsRequired": [
+          {
+            "title": "Entretenimiento deportivo",
+            "icon": "mdi-soccer"
+          },
+          {
+            "title": "Cuidado de animales",
+            "icon": "mdi-dog-side"
+          },
+          {
+            "title": "Jardinería",
+            "icon": "mdi-flower-outline"
+          }
+        ],
+        "offers": [
+          {
+            "title": "Habitación compartida",
+            "icon": "mdi-account-multiple"
+          },
+          {
+            "title": "Todo incluido",
+            "icon": "mdi-infinity"
+          }
+        ],
         "workHours": 5,
         "available": ["Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
         "minStay": "3",
@@ -108,7 +202,7 @@
         "reviews": []
       },
       {
-        "title": "Reception afternoon shift+ Help us with morning chores",
+        "title": "Las luz para los perdidos",
         "description": "Guía Turístico: Organiza y sé el guía en tours por la ciudad.",
         "country": "España",
         "countryDiacritics": "Espana",
@@ -116,12 +210,128 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": ["Fotografía", "Informática", "Bartender"],
-        "offers": ["Habitacion de equipo", "Todo Includio"],
+        "skillsRequired": [
+          {
+            "title": "Entretenimiento deportivo",
+            "icon": "mdi-soccer"
+          },
+          {
+            "title": "Cuidado de animales",
+            "icon": "mdi-dog-side"
+          },
+          {
+            "title": "Jardinería",
+            "icon": "mdi-flower-outline"
+          }
+        ],
+        "offers": [
+          {
+            "title": "Habitación de equipo",
+            "icon": "mdi-account-multiple-plus"
+          },
+          {
+            "title": "Desayuno",
+            "icon": "mdi-coffee-outline"
+          }
+        ],
         "workHours": 5,
         "available": ["Mayo", "Junio", "Julio", "Agosto", "Septiembre"],
         "minStay": "3",
         "gallery": "",
+        "creator": "5ea888c260a9025d5dcef23e",
+        "reviews": []
+      },
+      {
+        "title": "Mas nuevo",
+        "description": "Guía Turístico: Organiza y sé el guía en tours por la ciudad.",
+        "country": "España",
+        "countryDiacritics": "Espana",
+        "city": "Sevilla",
+        "cityDiacritics": "Sevilla",
+        "street": "Calle Alfonso XII",
+        "strNum": "15",
+        "skillsRequired": [
+          {
+            "title": "Fotografía",
+            "icon": "mdi-camera"
+          },
+          {
+            "title": "Informática",
+            "icon": "mdi-gesture-tap-button"
+          },
+          {
+            "title": "Bartender",
+            "icon": "mdi-glass-cocktail"
+          }
+        ],
+        "offers": [
+          {
+            "title": "Habitación de equipo",
+            "icon": "mdi-account-multiple-plus"
+          },
+          {
+            "title": "Todo incluido",
+            "icon": "mdi-infinity"
+          }
+        ],
+        "workHours": 5,
+        "available": [
+          "Mayo",
+          "Junio",
+          "Julio",
+          "Agosto",
+          "Septiembre"
+        ],
+        "minStay": "3",
+        "mainPhoto":"https://images2.bovpg.net/r/back/es/sale/6ca9b6be9f4ca3.jpg",
+        "gallery": ["https://s3-eu-west-1.amazonaws.com/images.linnlive.com/9e2de4846a0d1e1b62ec42ffbea708c6/5b2d3b89-f3e9-47db-ac51-0cb52c1523ce.jpg","https://img3.viajar.elperiodico.com/e6/86/4e/ciudades-paisajes-y-tesoros-de-alemania-620x415.jpg"],
+        "creator": "5ea888c260a9025d5dcef23e",
+        "reviews": []
+      },
+      {
+        "title": "Mas viejo",
+        "description": "Guía Turístico: Organiza y sé el guía en tours por la ciudad.",
+        "country": "España",
+        "countryDiacritics": "Espana",
+        "city": "Sevilla",
+        "cityDiacritics": "Sevilla",
+        "street": "Calle Alfonso XII",
+        "strNum": "15",
+        "skillsRequired": [
+          {
+            "title": "Fotografía",
+            "icon": "mdi-camera"
+          },
+          {
+            "title": "Informática",
+            "icon": "mdi-gesture-tap-button"
+          },
+          {
+            "title": "Bartender",
+            "icon": "mdi-glass-cocktail"
+          }
+        ],
+        "offers": [
+          {
+            "title": "Habitación de equipo",
+            "icon": "mdi-account-multiple-plus"
+          },
+          {
+            "title": "Todo incluido",
+            "icon": "mdi-infinity"
+          }
+        ],
+        "workHours": 5,
+        "available": [
+          "Mayo",
+          "Junio",
+          "Julio",
+          "Agosto",
+          "Septiembre"
+        ],
+        "minStay": "3",
+        "mainPhoto": "https://k39.kn3.net/3/D/1/7/C/9/7FE.jpg",
+        "gallery": ["https://cdn.palbin.com/users/26017/images/70x50-street-1514202684.jpg","https://st-listas.20minutos.es/images/2013-01/353706/list_640px.jpg?1359486836","https://lgfstatic.com/912/conversions/0.61072800-15367315556JSk7M2AcXgsSl1j-large.jpg"],
         "creator": "5ea888c260a9025d5dcef23e",
         "reviews": []
       }
