@@ -9,73 +9,49 @@ module.exports = {
 }
 
 function getAllEvents (req, res) {
-  let filters = {
-  }
+  let filters = []
+  var cond = {}
+
   // ------- FILTRO PARA LUGARES -------------->
   if (req.query.p) {
-    const place =
-    {
+    filters.push({
       $or: [
-        {
-          country: {
-            $regex: `${req.query.p}`, $options: 'i'
-          }
-        },
-        {
-          city: {
-            $regex: `${req.query.p}`, $options: 'i'
-          }
-        },
-        {
-          countryDiacritics: {
-            $regex: `${removeDiacritics(req.query.p)}`, $options: 'i'
-          }
-        },
-        {
-          cityDiacritics: {
-            $regex: `${removeDiacritics(req.query.p)}`, $options: 'i'
-          }
-        }
+        { country: { $regex: `${req.query.p}`, $options: 'i' } },
+        { city: { $regex: `${req.query.p}`, $options: 'i' } },
+        { countryDiacritics: { $regex: `${removeDiacritics(req.query.p)}`, $options: 'i' } },
+        { cityDiacritics: { $regex: `${removeDiacritics(req.query.p)}`, $options: 'i' } }
       ]
-    }
-
-    if (filters.$and) {
-      filters.$and.push(place)
-    } else {
-      filters = {
-        $and: [
-          place
-        ]
-      }
-    }
+    })
   }
+
   // ------- FILTRO PARA HABILIDADES -------------->
   if (req.query.s) {
-    let skills = ''
-    if (req.query.s instanceof Array) {
-      skills = {
-        $or: req.query.s.map(element => {
-          return JSON.parse(`{ "skillsRequired.title": "${element}" }`)
-        })
-      }
-      console.log(skills)
-    } else {
-      skills = {
-        $or: [
-          JSON.parse(`{ "skillsRequired.title": "${req.query.s}" }`)
-        ]
-      }
-      console.log(skills)
-    }
-    if (filters.$and) {
-      filters.$and.push(skills)
-    } else {
-      filters = {
-        $and: [
-          skills
-        ]
-      }
-    }
+    console.log(JSON.parse(req.query.s))
+    // let skills = ''
+    // if (req.query.s instanceof Array) {
+    //   skills = {
+    //     $or: req.query.s.map(element => {
+    //       return JSON.parse(`{ "skillsRequired.title": "${element}" }`)
+    //     })
+    //   }
+    //   console.log(skills)
+    // } else {
+    //   skills = {
+    //     $or: [
+    //       JSON.parse(`{ "skillsRequired.title": "${req.query.s}" }`)
+    //     ]
+    //   }
+    //   console.log(skills)
+    // }
+    // if (filters.$and) {
+    //   filters.$and.push(skills)
+    // } else {
+    //   filters = {
+    //     $and: [
+    //       skills
+    //     ]
+    //   }
+    // }
   }
   // ------- FILTRO PARA OFFERS -------------->
   if (req.query.o) {
@@ -132,9 +108,12 @@ function getAllEvents (req, res) {
     }
   }
 
-  console.log(filters)
+  if (filters.length !== 0) {
+    cond = { $and: filters }
+  }
+
   EventsModel
-    .find(filters)
+    .find(cond)
     .populate('creator skillsRequired')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
