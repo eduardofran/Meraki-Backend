@@ -32,10 +32,6 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Añade el numero de tu calle']
   },
-  skillsRequired: [{
-    type: Object,
-    required: false
-  }],
   offers: [{
     type: Object,
     required: [true, 'Tienes que seleccionar alguna opcion']
@@ -69,12 +65,17 @@ const eventSchema = new mongoose.Schema({
   creator: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
-    ref: 'users'
+    ref: 'user'
   },
   reviews: [{
     type: mongoose.Schema.Types.ObjectId,
     required: false,
-    ref: 'reviews'
+    ref: 'review'
+  }],
+  skillsRequired: [{
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: 'skill'
   }]
 })
 

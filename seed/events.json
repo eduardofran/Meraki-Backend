@@ -11,11 +11,6 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": [
-          { "title": "Fotografía", "icon": "mdi-camera" },
-          { "title": "Informática", "icon": "mdi-gesture-tap-button" },
-          { "title": "Bartender", "icon": "mdi-glass-cocktail" }
-        ],
         "offers": [
           {
             "title": "Habitación de equipo",
@@ -39,20 +34,6 @@
         "cityDiacritics": "Bage",
         "street": "Avenida Santa tecla",
         "strNum": "35",
-        "skillsRequired": [
-          {
-            "title": "Entretenimiento deportivo",
-            "icon": "mdi-soccer"
-          },
-          {
-            "title": "Enseñar idiomas",
-            "icon": "mdi-google-translate"
-          },
-          {
-            "title": "Grabación",
-            "icon": "mdi-video-outline"
-          }
-        ],
         "offers": [
           {
             "title": "Camping",
@@ -90,20 +71,6 @@
         "cityDiacritics": "Cuenca",
         "street": "paseo rio Tombebabua",
         "strNum": "s/n",
-        "skillsRequired": [
-          {
-            "title": "Entretenimiento deportivo",
-            "icon": "mdi-soccer"
-          },
-          {
-            "title": "Cuidado de animales",
-            "icon": "mdi-dog-side"
-          },
-          {
-            "title": "Jardinería",
-            "icon": "mdi-flower-outline"
-          }
-        ],
         "offers": [
           {
             "title": "Habitación de equipo",
@@ -130,20 +97,6 @@
         "cityDiacritics": "Tarragona",
         "street": "Estació de xerta.",
         "strNum": "1",
-        "skillsRequired": [
-          {
-            "title": "Entretenimiento musical",
-            "icon": "mdi-music-note-outline"
-          },
-          {
-            "title": "Pintura y decoración",
-            "icon": "mdi-format-paint"
-          },
-          {
-            "title": "Jardinería",
-            "icon": "mdi-flower-outline"
-          }
-        ],
         "offers": [
           {
             "title": "Habitación individual",
@@ -170,20 +123,6 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": [
-          {
-            "title": "Entretenimiento deportivo",
-            "icon": "mdi-soccer"
-          },
-          {
-            "title": "Cuidado de animales",
-            "icon": "mdi-dog-side"
-          },
-          {
-            "title": "Jardinería",
-            "icon": "mdi-flower-outline"
-          }
-        ],
         "offers": [
           {
             "title": "Habitación compartida",
@@ -210,20 +149,6 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": [
-          {
-            "title": "Entretenimiento deportivo",
-            "icon": "mdi-soccer"
-          },
-          {
-            "title": "Cuidado de animales",
-            "icon": "mdi-dog-side"
-          },
-          {
-            "title": "Jardinería",
-            "icon": "mdi-flower-outline"
-          }
-        ],
         "offers": [
           {
             "title": "Habitación de equipo",
@@ -250,20 +175,6 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": [
-          {
-            "title": "Fotografía",
-            "icon": "mdi-camera"
-          },
-          {
-            "title": "Informática",
-            "icon": "mdi-gesture-tap-button"
-          },
-          {
-            "title": "Bartender",
-            "icon": "mdi-glass-cocktail"
-          }
-        ],
         "offers": [
           {
             "title": "Habitación de equipo",
@@ -297,20 +208,6 @@
         "cityDiacritics": "Sevilla",
         "street": "Calle Alfonso XII",
         "strNum": "15",
-        "skillsRequired": [
-          {
-            "title": "Fotografía",
-            "icon": "mdi-camera"
-          },
-          {
-            "title": "Informática",
-            "icon": "mdi-gesture-tap-button"
-          },
-          {
-            "title": "Bartender",
-            "icon": "mdi-glass-cocktail"
-          }
-        ],
         "offers": [
           {
             "title": "Habitación de equipo",

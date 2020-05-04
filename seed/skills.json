@@ -1,0 +1,67 @@
+[
+  {
+    "model": "skill",
+    "documents": [
+      {
+        "name": "Mantenimiento",
+        "icon": "mdi-wrench-outline"
+      },
+      {
+        "name": "Diseño Gráfico",
+        "icon": "mdi-brush"
+      },
+      {
+        "name": "Fotografía",
+        "icon": "mdi-camera"
+      },
+      {
+        "name": "Enseñanza escolar",
+        "icon": "mdi-book-open-page-variant"
+      },
+      {
+        "name": "Entretenimiento deportivo",
+        "icon": "mdi-soccer"
+      },
+      {
+        "name": "Tareas domésticas",
+        "icon": "mdi-sofa"
+      },
+      {
+        "name": "Enseñar idiomas",
+        "icon": "mdi-google-translate"
+      },
+      {
+        "name": "Informática",
+        "icon": "mdi-gesture-tap-button"
+      },
+      {
+        "name": "Pintura y decoración",
+        "icon": "mdi-format-paint"
+      },
+      {
+        "name": "Grabación de video",
+        "icon": "mdi-video-outline"
+      },
+      {
+        "name": "Cuidado infantil",
+        "icon": "mdi-baby-face-outline"
+      },
+      {
+        "name": "Cuidado de animales",
+        "icon": "mdi-dog-side"
+      },
+      {
+        "name": "Entretenimiento musical",
+        "icon": "mdi-music-note-outline"
+      },
+      {
+        "name": "Jardinería",
+        "icon": "mdi-flower-outline"
+      },
+      {
+        "name": "Bartender",
+        "icon": "mdi-glass-cocktail"
+      }
+    ]
+  }
+]

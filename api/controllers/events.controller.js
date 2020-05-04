@@ -135,9 +135,11 @@ function getAllEvents (req, res) {
   console.log(filters)
   EventsModel
     .find(filters)
+    .populate('creator skillsRequired')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
+
 function getEvent (req, res) {
   EventsModel
     .findById(req.params.id)

@@ -1,5 +1,4 @@
 const router = require('express').Router()
-// const { authUser } = require('../utils') // Authenticated Route
 
 const {
   getAllEvents,
