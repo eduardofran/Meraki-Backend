@@ -1,0 +1,39 @@
+[
+  {
+    "model": "offer",
+    "documents": [
+      {
+        "name": "Habitación individual",
+        "icon": "mdi-account"
+      },
+      {
+        "name": "Habitación compartida",
+        "icon": "mdi-account-multiple"
+      },
+      {
+        "name": "Habitación de equipo",
+        "icon": "mdi-account-multiple-plus"
+      },
+      {
+        "name": "Camping",
+        "icon": "mdi-image-filter-hdr"
+      },
+      {
+        "name": "Desayuno",
+        "icon": "mdi-coffee-outline"
+      },
+      {
+        "name": "Almuerzo",
+        "icon": "mdi-silverware"
+      },
+      {
+        "name": "Cena",
+        "icon": "mdi-silverware-fork-knife"
+      },
+      {
+        "name": "Todo incluido",
+        "icon": "mdi-infinity"
+      }
+    ]
+  }
+]

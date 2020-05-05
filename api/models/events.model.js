@@ -32,10 +32,6 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Añade el numero de tu calle']
   },
-  offers: [{
-    type: Object,
-    required: [true, 'Tienes que seleccionar alguna opcion']
-  }],
   workHours: {
     type: Number,
     required: [true, 'Selecciona una opción']
@@ -76,6 +72,11 @@ const eventSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     required: false,
     ref: 'skill'
+  }],
+  offers: [{
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: 'offer'
   }]
 })
 

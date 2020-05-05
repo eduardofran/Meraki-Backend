@@ -129,7 +129,7 @@ function getAllEvents (req, res) {
 
   EventsModel
     .find(cond)
-    .populate('creator skillsRequired')
+    .populate('creator skillsRequired offers')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
@@ -137,6 +137,7 @@ function getAllEvents (req, res) {
 function getEvent (req, res) {
   EventsModel
     .findById(req.params.id)
+    .populate('creator skillsRequired offers')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
