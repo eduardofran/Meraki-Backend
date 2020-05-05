@@ -53,7 +53,7 @@ const userSchema = new mongoose.Schema({
   favEvents: [{
     type: mongoose.Schema.Types.ObjectId,
     required: false,
-    ref: 'events'
+    ref: 'event'
   }]
 })
 
