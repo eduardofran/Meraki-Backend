@@ -9,7 +9,7 @@ module.exports = {
 }
 
 function getAllEvents (req, res) {
-  let filters = []
+  const filters = []
   var cond = {}
 
   // ------- FILTRO PARA LUGARES -------------->
@@ -26,7 +26,22 @@ function getAllEvents (req, res) {
 
   // ------- FILTRO PARA HABILIDADES -------------->
   if (req.query.s) {
-    console.log(JSON.parse(req.query.s))
+    if (req.query.s instanceof Array) {
+      filters.push({
+        $or: req.query.s.map(element => {
+          return JSON.parse(`{ "skillsRequired.title": "${element}" }`)
+        })
+      })
+    } else {
+      console.log(req.query.s)
+      filters.push({
+        $or: [
+          JSON.parse(`{ "skillsRequired": "${req.query.s}" }`)
+        ]
+      })
+    }
+
+    // console.log(JSON.parse(req.query.s))
     // let skills = ''
     // if (req.query.s instanceof Array) {
     //   skills = {
@@ -54,59 +69,59 @@ function getAllEvents (req, res) {
     // }
   }
   // ------- FILTRO PARA OFFERS -------------->
-  if (req.query.o) {
-    let offers = ''
-    if (req.query.o instanceof Array) {
-      offers = {
-        $or: req.query.o.map(element => {
-          return JSON.parse(`{ "offers.title": "${element}" }`)
-        })
-      }
-      console.log(offers)
-    } else {
-      offers = {
-        $or: [
-          JSON.parse(`{ "offers.title": "${req.query.o}" }`)
-        ]
-      }
-    }
-    if (filters.$and) {
-      filters.$and.push(offers)
-    } else {
-      filters = {
-        $and: [
-          offers
-        ]
-      }
-    }
-  }
-  // ------- FILTRO PARA DISPO -------------->
-  if (req.query.d) {
-    let dispo = ''
-    if (req.query.d instanceof Array) {
-      dispo = {
-        $or: req.query.d.map(element => {
-          return JSON.parse(`{ "available": "${element}" }`)
-        })
-      }
-      console.log(dispo)
-    } else {
-      dispo = {
-        $or: [
-          JSON.parse(`{ "available": "${req.query.d}" }`)
-        ]
-      }
-    }
-    if (filters.$and) {
-      filters.$and.push(dispo)
-    } else {
-      filters = {
-        $and: [
-          dispo
-        ]
-      }
-    }
-  }
+  // if (req.query.o) {
+  //   let offers = ''
+  //   if (req.query.o instanceof Array) {
+  //     offers = {
+  //       $or: req.query.o.map(element => {
+  //         return JSON.parse(`{ "offers.title": "${element}" }`)
+  //       })
+  //     }
+  //     console.log(offers)
+  //   } else {
+  //     offers = {
+  //       $or: [
+  //         JSON.parse(`{ "offers.title": "${req.query.o}" }`)
+  //       ]
+  //     }
+  //   }
+  //   if (filters.$and) {
+  //     filters.$and.push(offers)
+  //   } else {
+  //     filters = {
+  //       $and: [
+  //         offers
+  //       ]
+  //     }
+  //   }
+  // }
+  // // ------- FILTRO PARA DISPO -------------->
+  // if (req.query.d) {
+  //   let dispo = ''
+  //   if (req.query.d instanceof Array) {
+  //     dispo = {
+  //       $or: req.query.d.map(element => {
+  //         return JSON.parse(`{ "available": "${element}" }`)
+  //       })
+  //     }
+  //     console.log(dispo)
+  //   } else {
+  //     dispo = {
+  //       $or: [
+  //         JSON.parse(`{ "available": "${req.query.d}" }`)
+  //       ]
+  //     }
+  //   }
+  //   if (filters.$and) {
+  //     filters.$and.push(dispo)
+  //   } else {
+  //     filters = {
+  //       $and: [
+  //         dispo
+  //       ]
+  //     }
+  //   }
+  // }
 
   if (filters.length !== 0) {
     cond = { $and: filters }
