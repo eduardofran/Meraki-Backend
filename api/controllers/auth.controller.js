@@ -26,7 +26,7 @@ function signup (req, res) {
       const token = jwt.sign(
         userData,
         process.env.SECRET, // TAKE SECRET KEY FROM .ENV
-        { expiresIn: '1m' }
+        { expiresIn: '7d' }
       )
 
       return res.json({ token: token, ...userData })
@@ -51,9 +51,8 @@ function login (req, res) {
         const token = jwt.sign(
           userData,
           process.env.SECRET,
-          { expiresIn: '1m' }
+          { expiresIn: '7d' }
         )
-
         return res.json({ token: token, ...userData })
       })
     })
