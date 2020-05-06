@@ -22,17 +22,27 @@ function addFavorites (req, res) {
     .findOne({ _id: res.locals.user._id })
     .then(user => {
       user.favEvents.push(req.body.favorite)
+      user.save()
       return res.json(user)
     })
     .catch((err) => handleError(err, res))
 }
 
 function deleteFavorite (req, res) {
-  userModel
-    .remove({
-      user: res.locals.user._id,
-      favEvents: req.params.id
+  userModel.findById(res.locals.user._id)
+    .then(user => {
+      console.log(user)
+      user.favEvents.pull(req.params.id)
+      user.save()
+      return res.json(user.favEvents)
     })
-    .then(lessons => res.json(lessons))
     .catch((err) => handleError(err, res))
 }
+// userModel
+//   .remove({
+//     user: res.locals.user._id,
+//     favEvents: req.params.id
+//   })
+//   .then(lessons => res.json(lessons))
+//   .catch((err) => handleError(err, res))
+// })
