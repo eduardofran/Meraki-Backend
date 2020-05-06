@@ -8,127 +8,24 @@ module.exports = {
   getEvent
 }
 
+function queryPlace (place) {
+  return {
+    $or: [
+      { country: { $regex: `${place}`, $options: 'i' } },
+      { city: { $regex: `${place}`, $options: 'i' } },
+      { countryDiacritics: { $regex: `${removeDiacritics(place)}`, $options: 'i' } },
+      { cityDiacritics: { $regex: `${removeDiacritics(place)}`, $options: 'i' } }
+    ]
+  }
+}
 function getAllEvents (req, res) {
   const filters = []
-  var cond = {}
+  if (req.query.p) { filters.push(queryPlace(req.query.p)) }
+  if (req.query.s) { filters.push({ skillsRequired: { $all: req.query.s.split(',') } }) }
 
-  // ------- FILTRO PARA LUGARES -------------->
-  if (req.query.p) {
-    filters.push({
-      $or: [
-        { country: { $regex: `${req.query.p}`, $options: 'i' } },
-        { city: { $regex: `${req.query.p}`, $options: 'i' } },
-        { countryDiacritics: { $regex: `${removeDiacritics(req.query.p)}`, $options: 'i' } },
-        { cityDiacritics: { $regex: `${removeDiacritics(req.query.p)}`, $options: 'i' } }
-      ]
-    })
-  }
-
-  // ------- FILTRO PARA HABILIDADES -------------->
-  if (req.query.s) {
-    if (req.query.s instanceof Array) {
-      filters.push({
-        $or: req.query.s.map(element => {
-          return JSON.parse(`{ "skillsRequired.title": "${element}" }`)
-        })
-      })
-    } else {
-      console.log(req.query.s)
-      filters.push({
-        $or: [
-          JSON.parse(`{ "skillsRequired": "${req.query.s}" }`)
-        ]
-      })
-    }
-
-    // console.log(JSON.parse(req.query.s))
-    // let skills = ''
-    // if (req.query.s instanceof Array) {
-    //   skills = {
-    //     $or: req.query.s.map(element => {
-    //       return JSON.parse(`{ "skillsRequired.title": "${element}" }`)
-    //     })
-    //   }
-    //   console.log(skills)
-    // } else {
-    //   skills = {
-    //     $or: [
-    //       JSON.parse(`{ "skillsRequired.title": "${req.query.s}" }`)
-    //     ]
-    //   }
-    //   console.log(skills)
-    // }
-    // if (filters.$and) {
-    //   filters.$and.push(skills)
-    // } else {
-    //   filters = {
-    //     $and: [
-    //       skills
-    //     ]
-    //   }
-    // }
-  }
-  // ------- FILTRO PARA OFFERS -------------->
-  // if (req.query.o) {
-  //   let offers = ''
-  //   if (req.query.o instanceof Array) {
-  //     offers = {
-  //       $or: req.query.o.map(element => {
-  //         return JSON.parse(`{ "offers.title": "${element}" }`)
-  //       })
-  //     }
-  //     console.log(offers)
-  //   } else {
-  //     offers = {
-  //       $or: [
-  //         JSON.parse(`{ "offers.title": "${req.query.o}" }`)
-  //       ]
-  //     }
-  //   }
-  //   if (filters.$and) {
-  //     filters.$and.push(offers)
-  //   } else {
-  //     filters = {
-  //       $and: [
-  //         offers
-  //       ]
-  //     }
-  //   }
-  // }
-  // // ------- FILTRO PARA DISPO -------------->
-  // if (req.query.d) {
-  //   let dispo = ''
-  //   if (req.query.d instanceof Array) {
-  //     dispo = {
-  //       $or: req.query.d.map(element => {
-  //         return JSON.parse(`{ "available": "${element}" }`)
-  //       })
-  //     }
-  //     console.log(dispo)
-  //   } else {
-  //     dispo = {
-  //       $or: [
-  //         JSON.parse(`{ "available": "${req.query.d}" }`)
-  //       ]
-  //     }
-  //   }
-  //   if (filters.$and) {
-  //     filters.$and.push(dispo)
-  //   } else {
-  //     filters = {
-  //       $and: [
-  //         dispo
-  //       ]
-  //     }
-  //   }
-  // }
-
-  if (filters.length !== 0) {
-    cond = { $and: filters }
-  }
-
+  const query = (filters.length ? { $and: filters } : {})
   EventsModel
-    .find(cond)
+    .find(query)
     .populate('creator skillsRequired offers')
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))

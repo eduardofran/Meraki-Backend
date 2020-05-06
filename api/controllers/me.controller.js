@@ -8,7 +8,6 @@ module.exports = {
 }
 
 function getFavorites (req, res) {
-  console.log('hi')
   userModel
     .findById(res.locals.user._id
     )
@@ -21,7 +20,6 @@ function getFavorites (req, res) {
 function addFavorites (req, res) {
   userModel
     .findOne({ _id: res.locals.user._id })
-  console.log('hi')
     .then(user => {
       user.favEvents.push(req.body.favorite)
       return res.json(user)
