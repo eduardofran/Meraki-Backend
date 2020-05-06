@@ -7,7 +7,8 @@
         "email": "manolo@meraki.com",
         "password": "123456",
         "country": "España",
-        "birthday": "1980-12-20"
+        "birthday": "1980-12-20",
+        "bio":"orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
       }
     ]
   }

@@ -4,7 +4,8 @@ const { handleError } = require('../utils')
 module.exports = {
   addFavorites,
   getFavorites,
-  deleteFavorite
+  deleteFavorite,
+  getUser
 }
 
 function getFavorites (req, res) {
@@ -38,11 +39,13 @@ function deleteFavorite (req, res) {
     })
     .catch((err) => handleError(err, res))
 }
-// userModel
-//   .remove({
-//     user: res.locals.user._id,
-//     favEvents: req.params.id
-//   })
-//   .then(lessons => res.json(lessons))
-//   .catch((err) => handleError(err, res))
-// })
+function getUser (req, res) {
+  userModel
+    .findById(res.locals.user._id
+    )
+    .populate(' skills languages')
+    .then(user => {
+      res.json(user)
+    })
+    .catch((err) => handleError(err, res))
+}
