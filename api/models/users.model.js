@@ -46,14 +46,15 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now()
   },
-  skills: [{
-    type: String,
-    required: false
-  }],
   favEvents: [{
     type: mongoose.Schema.Types.ObjectId,
     required: false,
     ref: 'event'
+  }],
+  skills: [{
+    type: mongoose.Schema.Types.ObjectId,
+    required: false,
+    ref: 'skill'
   }]
 })
 

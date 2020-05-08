@@ -5,7 +5,8 @@ module.exports = {
   addFavorites,
   getFavorites,
   deleteFavorite,
-  getUser
+  getUser,
+  updateSkills
 }
 
 function getFavorites (req, res) {
@@ -46,6 +47,15 @@ function getUser (req, res) {
     .populate(' skills languages')
     .then(user => {
       res.json(user)
+    })
+    .catch((err) => handleError(err, res))
+}
+function updateSkills (req, res) {
+  userModel
+    .findByIdAndUpdate(res.locals.user._id
+      , req.body, { new: true })
+    .then(response => {
+      return res.json(response)
     })
     .catch((err) => handleError(err, res))
 }
