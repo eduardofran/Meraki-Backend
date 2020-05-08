@@ -6,7 +6,9 @@ module.exports = {
   getFavorites,
   deleteFavorite,
   getUser,
-  updateSkills
+  updateSkills,
+  deleteUser,
+  updateUser
 }
 
 function getFavorites (req, res) {
@@ -51,6 +53,24 @@ function getUser (req, res) {
     .catch((err) => handleError(err, res))
 }
 function updateSkills (req, res) {
+  userModel
+    .findByIdAndUpdate(res.locals.user._id
+      , req.body, { new: true })
+    .then(response => {
+      return res.json(response)
+    })
+    .catch((err) => handleError(err, res))
+}
+function deleteUser (req, res) {
+  userModel
+    .findByIdAndDelete(res.locals.user._id
+    )
+    .then(user => {
+      res.json(user)
+    })
+    .catch((err) => handleError(err, res))
+}
+function updateUser (req, res) {
   userModel
     .findByIdAndUpdate(res.locals.user._id
       , req.body, { new: true })
